@@ -1,0 +1,34 @@
+ #server port
+server:
+   port: 6060
+   
+#uhip props   
+uhip:  
+  uhipProps:
+    invalidCredential: Account Invalid.
+    accountDeactivated: Account Deactivated.
+#database props   
+spring:
+  datasource: 
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:xe
+    username: uhip_dev
+    password: uhip_dev  
+  jpa: 
+   hibernate: 
+    ddl-auto: update
+   properties: 
+     hibernate: 
+       show_sql: true
+       format_sql: true
+       dialect: org.hibernate.dialect.Oracle10gDialect  
+
+
+#looger cfg
+  logging: 
+  file: G:\app.log
+  pattern: 
+   console: "%msg%n"
+    
+
+       
