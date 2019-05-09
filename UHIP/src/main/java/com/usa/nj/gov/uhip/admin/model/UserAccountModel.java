@@ -1,26 +1,29 @@
 package com.usa.nj.gov.uhip.admin.model;
 
 import java.util.Date;
-
-
-
 import lombok.Data;
+/**
+ * HERE, THIS IS THE MODEL CLASS
+ * @author AVINASH
+ *
+ */
 @Data
 public class UserAccountModel {
-  	protected Long userAccId;
-	protected String firstName;
-	protected String lastName;
-	protected String userEmail;
-	protected String userPwd;
-	protected String dob;
-	protected Long ssn;
-	protected String role;
-	protected String activeSwitch;
+  	private Long userAccId;
+	private String firstName;
+	private String lastName;
+	private String userEmail;
+	private String userPwd;
+	private String dob;
+	private String gender;
+	private Long ssn;
+	private String role;
+	private String activeSwitch;
 	
-	protected Date createdDate;
+	private Date createdDate;
 	
-	protected Date updatedDate;
+	private Date updatedDate;
 	
-	protected String createdBy;
-	protected String updatedBy;
+	private String createdBy;
+	private String updatedBy;
 }

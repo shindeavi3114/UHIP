@@ -47,6 +47,8 @@ public class UserAccountEntity {
 	protected String userPwd;
 	@Column(name="DOB")
 	protected String dob;
+	@Column(name="GENDER")
+	protected String gender;
 	@Column(name="SSN")
 	protected Long ssn;
 	@Column(name="ROLE")

@@ -5,8 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.usa.nj.gov.uhip.admin.entity.UserAccountEntity;
-import com.usa.nj.gov.uhip.admin.exception.AdminException;
-import com.usa.nj.gov.uhip.admin.exception.UhipWebExceptionHandler;
+import com.usa.nj.gov.uhip.admin.exception.AdminExceptin;
 import com.usa.nj.gov.uhip.admin.model.UserAccountModel;
 import com.usa.nj.gov.uhip.admin.repository.UserAccountRepository;
 import com.usa.nj.gov.uhip.admin.service.UserAccountService;
@@ -37,7 +36,7 @@ public class UserAccountServiceImpl implements UserAccountService {
 			}
 		} catch (Exception e) {
 			
-			throw new UhipWebExceptionHandler();
+			throw new AdminExceptin();
 		}
 		return false;
 	}

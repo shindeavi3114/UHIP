@@ -1,34 +1,25 @@
 package com.usa.nj.gov.uhip.admin.exception;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ControllerAdvice;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+
+import com.usa.nj.gov.uhip.admin.constant.AppConstant;
+
 /**
- * HERE , THE EXCEPTION ALL HANDLE IN UHIPWEBEXCEPTION
+ * HERE,HANDLING ALL EXCEPTION AND SENDING THE MESSAGE
  * @author Avinash
  *
  */
-public class UhipWebExceptionHandler extends RuntimeException{
+@Controller
+@ControllerAdvice
+public class UhipWebExceptionHandler {
+	@ExceptionHandler(value = { AdminExceptin.class })
+	public String handlerException(Model model) {
+		model.addAttribute(AppConstant.ERROR, AppConstant.ERROR_MESSAGE);
 
-	public UhipWebExceptionHandler() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
+		return "error";
 
-	public UhipWebExceptionHandler(String arg0, Throwable arg1, boolean arg2, boolean arg3) {
-		super(arg0, arg1, arg2, arg3);
-		// TODO Auto-generated constructor stub
 	}
-
-	public UhipWebExceptionHandler(String message, Throwable cause) {
-		super(message, cause);
-		// TODO Auto-generated constructor stub
-	}
-
-	public UhipWebExceptionHandler(String message) {
-		super(message);
-		// TODO Auto-generated constructor stub
-	}
-
-	public UhipWebExceptionHandler(Throwable cause) {
-		super(cause);
-		// TODO Auto-generated constructor stub
-	}
-  
 }
