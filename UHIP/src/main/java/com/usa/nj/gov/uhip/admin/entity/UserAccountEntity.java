@@ -30,7 +30,7 @@ public class UserAccountEntity {
 	@Id
 	@SequenceGenerator(
 			 sequenceName="user_acc_seq",
-			 initialValue=0,
+			 initialValue=1,
 			 allocationSize=1,
 			 name="user_acc_seq_gen"
 			)

@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -50,11 +51,21 @@ public class UserAccountCreationController {
 		roleList.add("Admin");
 		roleList.add("Case Worker");
 		model.addAttribute("role", roleList);
-	
+	 
 	}
-	
-	public String createUserAccount() {
-		return null;
+	@RequestMapping(value = "/createUserAccount", method = RequestMethod.POST)
+	public String createUserAccount(@ModelAttribute("userAccountModel") UserAccountModel userAccountModel,Model model) {
+		
+		boolean isValue=userAccountServiceImpl.createUserAccount(userAccountModel);
+		if(isValue){
+			//sucess
+			model.addAttribute("sucess", "Account Created Successfully");
+		}else {
+			//failure
+			model.addAttribute("failure", "Account Created Failure ..!! Try again...");
+		}
+		initializeFormValue(model);
+		return AppConstant.USER_ACCOUNT_CREATION_VIEW;
 		
 	}
 }

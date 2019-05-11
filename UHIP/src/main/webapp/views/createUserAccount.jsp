@@ -9,7 +9,9 @@
 </head>
 <body>
 	<h2>Under Construction</h2>
-	<form:form action="/" method="GET" modelAttribute="userAccountModel">
+	<font color="green">${sucess}</font>
+	<font color="green">${failure}</font>
+	<form:form action="createUserAccount" method="POST" modelAttribute="userAccountModel">
 		<table>
 			<tr>
 				<td>First Name</td>
